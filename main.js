@@ -48,13 +48,13 @@ fileInput.addEventListener("change", () => {
 function handleFile(file) {
   //verifica o tipo do arquivo
   if (!file || !file.type.match(/^image\/(jpeg|png)$/)) {
-    uploadNote.innerHTML = "File type not supported!";
+    uploadNote.innerHTML = "Tipo de arquivo invalido!";
     uploadNote.classList.add("error");
     return;
   }
   //verifica o tamanho do arquivo
   if (file.size > 500 * 1024) {
-    uploadNote.innerHTML = "File too large. Please upload a photo under 500KB.";
+    uploadNote.innerHTML = "Arquivo muito grande. Por favor, envie uma foto com menos de 500KB.";
     uploadNote.classList.add("error");
     return;
   }
@@ -115,21 +115,21 @@ submitBtn.addEventListener("click", (e) => {
   }
 
   if (!email) {
-    emailInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Please provide your email!';
+    emailInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Por favor, insira um email!';
     emailInfo.classList.add("error");
     return;
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    emailInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Please Enter a valid email address!';
+    emailInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Por favor insira um email válido!';
     emailInfo.classList.add("error");
     return;
   }
 
   if (!github) {
-    githubInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Please provide your GitHub username!';
+    githubInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Por favor, insira seu nome de usuário do GitHub!';
     githubInfo.classList.add("error");
     return;
   } else if (!github.startsWith("@")) {
-    githubInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> GitHub username must start with "@"!';
+    githubInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> O nome de usuário do GitHub deve começar com "@"!';
     githubInfo.classList.add("error");
     return;
   }
@@ -154,3 +154,53 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 
+/*
+const partes = nome.trim().split(" ");
+if (partes.length > 1) {
+  nameInfo.textContent = "Digite apenas o primeiro nome";
+  nameInfo.classList.add("error");
+  return false;
+}
+
+const partes = nome.trim().split(" ");
+if (partes.length < 2) {
+  nameInfo.textContent = "Digite nome e sobrenome";
+  nameInfo.classList.add("error");
+  return false;
+}
+
+alert("Mensagem de erro");
+
+Toastify({
+  text: "Mensagem de erro",
+  duration: 3000,
+  gravity: "top",
+  position: "right",
+  backgroundColor: "red"
+}).showToast();
+
+if (!github.startsWith("@")) {
+  githubInfo.textContent = "Inclua o @ no início do usuário";
+  githubInfo.classList.add("error");
+  return false;
+}
+
+if (!github.startsWith("@")) {
+  github = "@" + github;
+}
+
+github = github.replace(/^@+/, "");
+github = "@" + github;
+
+if (file.size > 500 * 1024) {
+  uploadNote.textContent = "A imagem deve ter no máximo 500KB";
+  uploadNote.classList.add("error");
+  return false;
+}
+
+if (email.endsWith("@gmail.com")) {
+  emailInfo.textContent = "Não aceitamos e-mails do Gmail";
+  emailInfo.classList.add("error");
+  return false;
+}
+  */
