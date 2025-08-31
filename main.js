@@ -109,7 +109,7 @@ submitBtn.addEventListener("click", (e) => {
 
   // apresenta mensagem de erro se o nome/email/github não forem fornecidos
   if (!name) {
-    nameInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Please provide full name!';
+    nameInfo.innerHTML = '<img src="assets/images/icon-info.svg" alt="Info Icon" /> Por favor, insira seu nome completo!';
     nameInfo.classList.add("error");
     return;
   }
@@ -136,7 +136,7 @@ submitBtn.addEventListener("click", (e) => {
 
   // Valida imagem
   if (!photo) {
-    uploadNote.innerHTML = "Please upload a jpg or png file!";
+    uploadNote.innerHTML = "Por favor, envie um arquivo jpg ou png!";
     uploadNote.classList.add("error")
     return
   }
