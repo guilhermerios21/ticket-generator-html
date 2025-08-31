@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Conference ticket generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header>
+        <div>
+          <img src="assets/images/logo-full.svg" alt="" />
+        </div>
+      </header>
+      <div class="heading_container">
+        <h2>Sua jornada para coding conf 2026 começa aqui!</h2>
+        <h3>Garanta seu lugar na maior conferência de programação do próximo ano.</h3>
+      </div>
+      <!-- inicio do formulario -->
+      <form action="">
+        <div class="upload-wrapper">
+          <label for="photo">Envie seu avatar</label>
+          <div id="drop-area" class="upload-card">
+            <div class="upload-img">
+              <img
+                src="assets/images/icon-upload.svg"
+                alt="Upload button"
+                id="upload-btn"
+              />
+              <img id="photo-preview" alt="Preview" class="hidden" />
+            </div>
+            <div>
+              <p class="upload-text">Arraste e solte ou clique para enviar uma imagem</p>
+              <button
+                type="button"
+                class="hidden action-btn"
+                onclick="removeImage(event)"
+              >
+                Remover imagem
+              </button>
+              <button
+                type="button"
+                class="hidden action-btn"
+                onclick="changeImage(event)"
+              >
+                Mudar imagem
+              </button>
+            </div>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/jpeg, image/png"
+              hidden
+            />
+          </div>
+          <div class="img-container">
+            <img src="assets/images/icon-info.svg" alt="Info Icon" />
+            <p class="upload-note" id="upload-note">
+              Upload your photo (JPG or PNG, max size: 500KB)
+            </p>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <label for="fullName">Nome Completo</label>
+          <input type="text" name="fullName" id="name" />
+          <p id="name-info" class="info"></p>
+        </div>
+
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+          />
+          <p id="email-info" class="info"></p>
+        </div>
+
+        <div class="input-container">
+          <label for="github-username">Conta GitHub</label>
+          <input
+            type="text"
+            id="github-username"
+            name="github-username"
+            placeholder="@gitusername"
+          />
+          <p id="github-info" class="info"></p>
+        </div>
+
+        <div class="input-container">
+          <button class="submit-btn" type="submit" id="submit-btn">
+            Gerar Meu Ingresso
+          </button>
+        </div>
+      </form>
+
+      <!-- Fim da pagina -->
+    </main>
+    <script src="main.js" defer></script>
+  </body>
+</html>
